@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ItauModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SegUsuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodUsuario" Type="varchar" MaxLength="10" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+          <Property Name="FechaBaja" Type="smalldatetime" />
+          <Property Name="Atributo1" Type="varchar" MaxLength="255" />
+          <Property Name="Atributo2" Type="varchar" MaxLength="255" />
+          <Property Name="Atributo3" Type="varchar" MaxLength="255" />
+          <Property Name="Atributo4" Type="varchar" MaxLength="255" />
+          <Property Name="Atributo5" Type="varchar" MaxLength="255" />
+          <Property Name="Atributo6" Type="varchar" MaxLength="255" />
+          <Property Name="Atributo7" Type="varchar" MaxLength="255" />
+          <Property Name="Atributo8" Type="varchar" MaxLength="255" />
+          <Property Name="Atributo9" Type="varchar" MaxLength="255" />
+          <Property Name="CREATED_BY" Type="varchar" MaxLength="10" />
+          <Property Name="CREATION_DATE" Type="smalldatetime" />
+          <Property Name="LAST_UPDATED_BY" Type="varchar" MaxLength="10" />
+          <Property Name="LAST_UPDATED_DATE" Type="smalldatetime" />
+          <Property Name="FechaBloqueado" Type="smalldatetime" />
+          <Property Name="FechaVtoPassword" Type="smalldatetime" />
+          <Property Name="TipoUsuario" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="ItauModelStoreContainer">
+          <EntitySet Name="SegUsuario" EntityType="Self.SegUsuario" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ItauModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SegUsuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodUsuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="0" />
+          <Property Name="Atributo1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Atributo2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Atributo3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Atributo4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Atributo5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Atributo6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Atributo7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Atributo8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Atributo9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+          <Property Name="LAST_UPDATED_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDATED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="FechaBloqueado" Type="DateTime" Precision="0" />
+          <Property Name="FechaVtoPassword" Type="DateTime" Precision="0" />
+          <Property Name="TipoUsuario" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ItauEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SegUsuarios" EntityType="Self.SegUsuario" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ItauModelStoreContainer" CdmEntityContainer="ItauEntities">
+          <EntitySetMapping Name="SegUsuarios">
+            <EntityTypeMapping TypeName="ItauModel.SegUsuario">
+              <MappingFragment StoreEntitySet="SegUsuario">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+                <ScalarProperty Name="Atributo1" ColumnName="Atributo1" />
+                <ScalarProperty Name="Atributo2" ColumnName="Atributo2" />
+                <ScalarProperty Name="Atributo3" ColumnName="Atributo3" />
+                <ScalarProperty Name="Atributo4" ColumnName="Atributo4" />
+                <ScalarProperty Name="Atributo5" ColumnName="Atributo5" />
+                <ScalarProperty Name="Atributo6" ColumnName="Atributo6" />
+                <ScalarProperty Name="Atributo7" ColumnName="Atributo7" />
+                <ScalarProperty Name="Atributo8" ColumnName="Atributo8" />
+                <ScalarProperty Name="Atributo9" ColumnName="Atributo9" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATED_DATE" ColumnName="LAST_UPDATED_DATE" />
+                <ScalarProperty Name="FechaBloqueado" ColumnName="FechaBloqueado" />
+                <ScalarProperty Name="FechaVtoPassword" ColumnName="FechaVtoPassword" />
+                <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

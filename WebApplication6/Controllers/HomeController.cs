@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication6.Models;
 
 namespace WebApplication6.Controllers
 {
@@ -15,6 +16,16 @@ namespace WebApplication6.Controllers
 
         public ActionResult About()
         {
+            var context = new ItauEntities();
+
+            var newUsuario = new SegUsuario();
+            newUsuario.Nombre = "test";
+            newUsuario.Password = "test";
+
+            context.SegUsuarios.Add(newUsuario);
+
+            context.SaveChanges();
+
             ViewBag.Message = "Your application description page.";
 
             return View();
@@ -27,5 +38,17 @@ namespace WebApplication6.Controllers
 
             return View();
         }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult Contact(SegUsuario usuario)
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        
+
+
     }
 }
